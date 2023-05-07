@@ -1,0 +1,45 @@
+-- CREATE A CLOTHING STORE DATABASE
+
+/**Store_Items
+hats ($2 PRICE), ($1 COST), (10 SOLD)
+socks ($2 PRICE), ($1 COST), (10 SOLD) 
+Underwear ($3 PRICE) ($1.50 COST) (10)
+Men's tshirts ($10 PRICE) ($7.50 COST) (15 SOLD)
+Women's tshirts ($8 PRICE) (6.50 COST) (27 SOLD)
+Men's jeans ($20 PRICE) (17.25 COST) (40 SOLD)
+Women's jeans ($18 PRICE) ($15 COST) (40 SOLD)
+Men's shoes ($30 PRICE) ($27 COST) (30 SOLD)
+Women's shoes ($25 PRICE) ($23.75 COST) (25 SOLD)
+Men's sweatshirts ($40 PRICE) ($27 COST) (25 SOLD) 
+Women's sweatshirts ($38 PRICE) (24 COST) 
+Men's crewneck sweatshirts ($45 PRICE) ($30 COST) (15 SOLD)
+Women's crewneck sweatshirts ($42 PRICE) ($28 COST) (35 SOLD)
+Gloves ($12 PRICE) ($6.50 COST) (20 SOLD) 
+Scarfs ($10 PRICE) ($7 COST) (20 SOLD)
+**/
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, type TEXT, cost INTEGER, price INTEGER, quantity_sold INTEGER, profit INTEGER);
+
+
+INSERT INTO store VALUES (1, "HATS", 1, 2, 10, 10);
+INSERT INTO store VALUES (2, "SOCKS", 1, 2, 10, 10);
+INSERT INTO store VALUES (3, "UNDERWEAR", 1.50, 3, 10, 15);
+INSERT INTO store VALUES (4, "MEN'S TSHIRTS", 7.50, 10, 15, 37.5);
+INSERT INTO store VALUES (5, "WOMENS TSHIRTS", 6.50, 8, 27, 40.5);
+INSERT INTO store VALUES (6, "MEN'S JEANS", 17.25, 20, 40, 110);
+INSERT INTO store VALUES (7, "WOMEN'S JEANS", 15, 18, 40, 120);
+INSERT INTO store VALUES (8, "MEN'S SHOES", 27, 30, 30, 90);
+INSERT INTO store VALUES (9, "WOMEN'S SHOES", 23.75, 25, 25, 31.25);
+INSERT INTO store VALUES (10, "MEN'S SWEATSHIRTS", 27, 40, 25, 325);
+INSERT INTO store VALUES (11, "WOMEN'S SWEATSHIRTS", 24, 38, 38, 532);
+INSERT INTO store VALUES (12, "MEN'S CREWNECK SWEATSHIRTS", 30, 45, 45, 225);
+INSERT INTO store VALUES (13, "WOMEN'S CREWNECK SWEATSHIRTS", 1, 42, 35, 490);
+INSERT INTO store VALUES (14, "GLOVES", 6.50, 12, 20, 110);
+INSERT INTO store VALUES (15, "SCARFS", 1, 10, 20, 60);
+
+-- displaying database ordered by price 
+SELECT * FROM store ORDER BY price;
+
+-- what is the total profit from the sales of the store?
+SELECT SUM(PROFIT) FROM store;
+
